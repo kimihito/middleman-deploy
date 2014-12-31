@@ -37,7 +37,7 @@ module Middleman
           end
 
           def commit_branch(options = '')
-            message = self.commit_message ? self.commit_message : add_signature_to_commit_message('Automated commit')
+            message = self.commit_message ? self.commit_message : add_signature_to_commit_message('[ci skip] Automated commit')
 
             run_or_fail("git add -A")
             run_or_fail("git commit --allow-empty -am \"#{message}\"")
